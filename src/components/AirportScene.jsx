@@ -223,7 +223,7 @@ const useWindowSize = () => {
           shadows
         >
     <Text
-  font='/Doto/static/Doto_Rounded-light.ttf'
+  font='/Doto/static/Doto_Rounded-Light.ttf'
   fontSize={2}
   color="white"
   position={[2, 8, 0]}
