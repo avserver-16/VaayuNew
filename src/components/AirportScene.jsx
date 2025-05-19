@@ -69,14 +69,7 @@ const [name,setName]=useState('')
     { id: 13, name: 'Gaja Lounge', position: [3, 1, -6] },
   ];
   
-  const gridHelper = useMemo(() => {
-      const size = 100;
-      const divisions = 100;
-      const grid = new GridHelper(size, divisions, 0x888888, 0x444444);
-      grid.material.opacity = 0.25;
-      grid.material.transparent = true;
-      return grid;
-    }, []);
+ 
   const handleTerminalClick = (terminal) => {
     // Disallow adding two terminals of the same section
     const sameSectionExists = route.some((t) => t.name.split('-')[0] === terminal.name.split('-')[0]);
@@ -117,6 +110,9 @@ const useWindowSize = () => {
 <div className={showRules ? "blurred" : ""}>
   {/* your entire page content here: nav, canvas, etc. */}
 
+<div className='title'>
+ <div className='p'>Airport</div>Navigation
+</div>
 <button className="top-right-button" onClick={() => setShowRules(prev => !prev)}>
   <div>Help?</div>
 </button>
@@ -208,7 +204,7 @@ const useWindowSize = () => {
                   </span>
                 ))}
               </p>
-              <button className="terminal-button" onClick={clearRoute}>Clear Route</button>
+              <button className="close" onClick={clearRoute}>Clear Route</button>
             </>
           ) : (
             <p>Select terminals to build a route</p>
